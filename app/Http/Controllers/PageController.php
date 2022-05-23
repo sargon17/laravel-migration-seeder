@@ -10,8 +10,9 @@ class PageController extends Controller
     public function index()
     {
         $trains = Train::select(
-            "trains.id",
-            "trains.train_code",
+            "trains.id as id",
+            "train_code",
+            "C.name as company_name",
             "SA.name as arrive_station",
             "SD.name as depart_station",
             "trains.arrive_time",
