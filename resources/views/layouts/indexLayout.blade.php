@@ -15,7 +15,10 @@
                     ID
                 </th>
                 <th>
-                    company name
+                    train to
+                </th>
+                <th>
+                    train from
                 </th>
                 <th>
                     duration
@@ -27,10 +30,7 @@
                     arrive time
                 </th>
                 <th>
-                    depart station
-                </th>
-                <th>
-                    arrive station
+                    company name
                 </th>
                 <th>
                     status
