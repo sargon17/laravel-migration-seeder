@@ -1,55 +1,20 @@
 
 @extends('layouts.indexLayout')
 
-@dump($trains);
+@section('trains_info')
+    @foreach ($trains as $train )
+    <tr>
+        <td>{{ $train->id }}</td>
+        <td>{{ $train->company_name}}</td>
+        <td>{{ $train->dateDifference()}}</td>
+        <td>{{ $train->fromDateTime($train->depart_time) }}</td>
+        <td>{{ $train->fromDateTime($train->arrive_time) }}</td>
+        <td>{{ $train->depart_station }}</td>
+        <td>{{ $train->arrive_station }}</td>
+        <td>{{ $train->state }}</td>
+        <td>{{ $train->delay }} min</td>
+    </tr>
 
-{{-- @section('train_code')
-
-   {{ $trains->train_code }}
-
-@endsection
-
-@section('arrive_station')
-
-{{ $trains->arrive_station }}
-
-@endsection
-
-@section('depart_station')
-
-{{ $trains->depart_station }}
+    @endforeach
 
 @endsection
-
-@section('arrive_time')
-
-{{ $trains->arrive_time }}
-
-@endsection
-
-@section('depart_time')
-
-{{ $trains->depart_time }}
-
-@endsection
-
-@section('duration')
-
-{{ $trains->arrive_time->diff($trains->depart_time, true) }}
-
-@endsection
-
-@section('state')
-
-    {{ $trains->state }}
-
-@endsection
-
-@section('delay')
-
-{{ $trains->delay }}
-
-@endsection
-
-@dump($trains->arrive_time->diff($trains->depart_time, true));
- --}}
